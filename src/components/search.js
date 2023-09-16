@@ -3,7 +3,7 @@ import searchIcon from '../assets/images/Search.png';
 import axios from 'axios';
 import SearchItems from './searchItems';
 
-const Search = ()=> {
+const Search = ({handledata})=> {
   const [search, setsearch] = useState('')
   const [display, setdisplay] = useState(false)
  const [typing, settyping] = useState(false)
@@ -45,6 +45,7 @@ const Search = ()=> {
       console.log(result.data);
       console.log(search)
       setsearch(final.results);
+      handledata(final.results)
       
     }catch(err){
       console.log(err)

@@ -33,7 +33,10 @@ function App() {
       console.log(err)
     }
   }
-
+  const handledata = (data)=>{
+    setData(data)
+    console.log('handledata')
+  }
   useEffect(() => {
     fetchdata();
   }, []);
@@ -41,7 +44,7 @@ function App() {
   return (
     <div className="App">
       <div className="carousel-home">
-        <Header />
+        <Header handledata ={handledata}/>
         <div className="intro">
           <div className="intro-body">
             <h1 className="intro-heading">John Wick 3 : Parabellum</h1>

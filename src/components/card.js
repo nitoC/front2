@@ -38,7 +38,6 @@ const Card = ({movie})=> {
       }
     }
     const movieHandler = () => {
-      const newData = 'New Data'; // Replace with your payload
       dispatch(getMovie(card)); // Dispatch the Redux action
   
       // Use history to navigate to another route
@@ -63,8 +62,8 @@ const Card = ({movie})=> {
   
     return ( 
         <>
-        <div className="card">
-          <div className='card-poster'>
+        <div data-testid= "movie-card" className="card">
+          <div data-testid= "movie-poster" className='card-poster'>
             <div onClick={clickHandler} className={`favourites ${click}`}>
             <img src={elipse} className='elipse' alt='elipse icon'/>
             <img src={heart} className='heart' alt='heart icon'/>
@@ -90,10 +89,10 @@ const Card = ({movie})=> {
             )
              :"hello"
           }
-               {itemData? <span> {itemData.split("-")[0]}</span> : ""}
+               {itemData? <span data-testid= "movie-release-date"> {itemData.split("-")[0]}</span> : ""}
 
           </div>
-          <h2 onClick={movieHandler} className='card-name'>
+          <h2 data-testid= "movie-title" onClick={movieHandler} className='card-name'>
             {movie.title}
           </h2>
           <div onClick={movieHandler} className='card-rating'>

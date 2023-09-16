@@ -14,7 +14,7 @@ console.log(details, 'details')
       <div className="details-heading-wrapper">
         
         <h1 className="details-heading">
-          {details?details.title:''}  •  {details&&details.release_date?details.release_date.split("-")[0]:''}  •  PG-13  •  {details&&details.runtime?minutesToHoursAndMinutes(details.runtime):''}
+          <span data-testid= "movie-title" >{details?details.title:''} </span>  •  <span data-testid= "movie-release-date">{details&&details.release_date?details.release_date.split("-")[0]:''}</span>  •  PG-13  •  <span data-testid= "movie-runtime">{details&&details.runtime?minutesToHoursAndMinutes(details.runtime):''}</span>
         </h1>
         <div className="details-genre">
         {details&&details.genres?details.genres.map((item,key)=>{
@@ -28,7 +28,7 @@ console.log(details, 'details')
         </div>
       </div>
       <div className="details-text-wrapper">
-        <p className="details-text">
+        <p data-testid= "movie-overview" className="details-text">
             {details.overview}
         </p>
       </div>
